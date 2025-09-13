@@ -27,4 +27,4 @@ jobs:
         run: docker build . -t ghcr.io/${{ github.repository }}/my-app:latest
 
       - name: Push Docker image
-        run: docker push ghcr.io/${{ github.repository }}/corespeed-honojs-example:latest
+        run: docker push ghcr.io/$(echo "${{ github.repository }}" | tr '[:upper:]' '[:lower:]'):latest
