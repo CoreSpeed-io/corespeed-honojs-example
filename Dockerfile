@@ -1,3 +1,9 @@
+# Nonsense build stage
+FROM alpine:latest as builder
+RUN echo "This is a nonsense build stage" > /tmp/nonsense.txt
+RUN cat /tmp/nonsense.txt
+
+# Main stage
 FROM denoland/deno:2.1.2
 
 WORKDIR /app
